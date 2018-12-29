@@ -20,6 +20,6 @@ public class Bullet : MonoBehaviour
     
     void OnBecameInvisible()
     {
-        GameObject.Destroy(this);
+        GameObject.Destroy(gameObject);
     }
 }
