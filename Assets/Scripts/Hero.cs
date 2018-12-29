@@ -5,6 +5,7 @@ using UnityEngine;
 public class Hero : MonoBehaviour
 {
     public float speed;
+    public GameObject prefab;
     
     // Use this for initialization
     void Start ()
@@ -31,9 +32,10 @@ public class Hero : MonoBehaviour
             transform.position += Vector3.up * speed * Time.deltaTime;
         }
         
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            //SHOOT!!
+            GameObject myNewBullet = GameObject.Instantiate(prefab);
+            myNewBullet.transform.position = transform.position;
         }
     }
 }
