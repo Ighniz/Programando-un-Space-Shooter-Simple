@@ -17,4 +17,9 @@ public class Bullet : MonoBehaviour
     {
         transform.position += Vector3.up * speed * Time.deltaTime;
     }
+    
+    void OnBecameInvisible()
+    {
+        GameObject.Destroy(this);
+    }
 }
