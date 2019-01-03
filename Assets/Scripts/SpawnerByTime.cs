@@ -10,12 +10,16 @@ public class SpawnerByTime : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
-        
+        currentSeconds = timeToSpawn;
     }
     
     // Update is called once per frame
     void Update ()
     {
-        currentSeconds += Time.deltaTime;
+        currentSeconds -= Time.deltaTime;
+        if (currentSeconds <= 0)
+        {
+            
+        }
     }
 }
