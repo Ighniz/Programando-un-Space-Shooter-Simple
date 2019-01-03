@@ -6,7 +6,7 @@ public class Spawner : MonoBehaviour
 {
     public GameObject prefab;
     
-    void Spawn()
+    public void Spawn()
     {
         GameObject obj = GameObject.Instantiate(prefab);
         obj.transform.position = transform.position;
