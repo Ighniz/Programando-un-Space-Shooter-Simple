@@ -20,6 +20,7 @@ public class SpawnerByTime : MonoBehaviour
         if (currentSeconds <= 0)
         {
             GetComponent<Spawner>().Spawn();
+            currentSeconds = timeToSpawn;
         }
     }
 }
