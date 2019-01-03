@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Spawner))]
 public class SpawnerByTime : MonoBehaviour
 {
     public float timeToSpawn;
