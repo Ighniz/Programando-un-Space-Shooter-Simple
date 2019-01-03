@@ -19,7 +19,7 @@ public class SpawnerByTime : MonoBehaviour
         currentSeconds -= Time.deltaTime;
         if (currentSeconds <= 0)
         {
-            
+            GetComponent<Spawner>().Spawn();
         }
     }
 }
