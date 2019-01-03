@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4520317786517920}
   - component: {fileID: 114655659653242838}
+  - component: {fileID: 114831424814460556}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -51,3 +52,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cd1527eeee2445e1b40fbd208572f68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prefab: {fileID: 0}
+--- !u!114 &114831424814460556
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1086799056197264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8c19726a21574bf7bfc230d6b63eb25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToSpawn: 0
+  currentSeconds: 0
