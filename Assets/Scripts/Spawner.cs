@@ -10,5 +10,6 @@ public class Spawner : MonoBehaviour
     {
         GameObject obj = GameObject.Instantiate(prefab);
         obj.transform.position = transform.position;
+        obj.transform.up = transform.up;
     }
 }
