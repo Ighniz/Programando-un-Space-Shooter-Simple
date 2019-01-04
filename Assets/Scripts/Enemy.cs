@@ -17,4 +17,9 @@ public class Enemy : MonoBehaviour
     {
         transform.position += transform.up * speed * Time.deltaTime;
     }
+
+    private void OnBecameInvisible()
+    {
+        GameObject.Destroy(gameObject);
+    }
 }
