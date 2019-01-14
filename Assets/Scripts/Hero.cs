@@ -36,6 +36,8 @@ public class Hero : MonoBehaviour
         {
             GameObject myNewBullet = GameObject.Instantiate(prefab);
             myNewBullet.transform.position = transform.position;
+
+            myNewBullet.layer = gameObject.layer;
         }
     }
 }
