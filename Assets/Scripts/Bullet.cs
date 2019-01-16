@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    public float damage;
     public float speed;
     
     // Use this for initialization
@@ -27,7 +28,7 @@ public class Bullet : MonoBehaviour
     //Se ejecuta cuando se produce una colisión con este objeto.
     private void OnCollisionEnter2D(Collision2D other)
     {
-        Debug.Log("Me golpeó " + other.gameObject.name);
+        other.gameObject.SendMessage("OnRecibirDano", damage, SendMessageOptions.DontRequireReceiver);
         GameObject.Destroy(gameObject);
     }
 }

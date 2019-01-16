@@ -23,8 +23,9 @@ public class Enemy : MonoBehaviour
         GameObject.Destroy(gameObject);
     }
 
-    public void OnRecibirDano()
+    public void OnRecibirDano(float cantidad)
     {
-        Debug.Log("Ouch!!");
+        Debug.Log("Ouch!! Me hicieron " + cantidad + " de daño!!");
+        GameObject.Destroy(gameObject);
     }
 }
