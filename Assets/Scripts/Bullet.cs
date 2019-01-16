@@ -27,6 +27,7 @@ public class Bullet : MonoBehaviour
     //Se ejecuta cuando se produce una colisión con este objeto.
     private void OnCollisionEnter2D(Collision2D other)
     {
-        Debug.Log("Choqué con algo!!");
+        Debug.Log("Me golpeó " + other.gameObject.name);
+        GameObject.Destroy(gameObject);
     }
 }

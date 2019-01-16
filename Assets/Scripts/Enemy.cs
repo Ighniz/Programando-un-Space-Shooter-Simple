@@ -22,4 +22,9 @@ public class Enemy : MonoBehaviour
     {
         GameObject.Destroy(gameObject);
     }
+
+    public void OnRecibirDano()
+    {
+        Debug.Log("Ouch!!");
+    }
 }
