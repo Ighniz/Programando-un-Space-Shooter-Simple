@@ -18,8 +18,15 @@ public class Bullet : MonoBehaviour
         transform.position += Vector3.up * speed * Time.deltaTime;
     }
     
+    //Se ejecuta cuando este objeto deja de ser visible por todas las cámaras.
     void OnBecameInvisible()
     {
         GameObject.Destroy(gameObject);
+    }
+
+    //Se ejecuta cuando se produce una colisión con este objeto.
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        Debug.Log("Choqué con algo!!");
     }
 }
