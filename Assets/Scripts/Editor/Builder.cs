@@ -9,7 +9,7 @@ public class Builder : MonoBehaviour
 {
     private static Dictionary<string, Action<string>> actionsByParameters = new Dictionary<string, Action<string>>
     {
-        {"targetPlatform", BuildFor},
+        {"targetPlatform", SetTargetPlatform},
         {"outputDir", SetOutputDir}
     };
 
@@ -30,14 +30,21 @@ public class Builder : MonoBehaviour
                 actionsByParameters[nameValueArg[0]].Invoke(nameValueArg[1]);
             }
         }
+
+        Build();
     }
 
-    static public void BuildFor(string target)
+    static public void Build()
     {
         BuildTarget buildTarget = (BuildTarget)Enum.Parse(typeof(BuildTarget), targetPlatform);
         BuildPipeline.BuildPlayer(new[] {"MenuPrincipal"}, outputDir, buildTarget, BuildOptions.None);
     }
 
+    static public void SetTargetPlatform(string target)
+    {
+        targetPlatform = target;
+    }
+    
     static public void SetOutputDir(string output)
     {
         outputDir = output;
