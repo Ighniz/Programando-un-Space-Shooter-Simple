@@ -22,9 +22,13 @@ public class Builder : MonoBehaviour
         foreach (var argument in args)
         {
             var nameValueArg = argument.Split(new[]{"="}, StringSplitOptions.RemoveEmptyEntries);
-            Debug.Log("ARGUMENT: " + argument);
-            Debug.Log("PARSING ARGUMENT \"" + nameValueArg[0] + "\" with value \"" + nameValueArg[1] + "\"");
-            actionsByParameters[nameValueArg[0]].Invoke(nameValueArg[1]);
+
+            if (actionsByParameters.ContainsKey(nameValueArg[0]))
+            {
+                Debug.Log("ARGUMENT: " + argument);
+                Debug.Log("PARSING ARGUMENT \"" + nameValueArg[0] + "\" with value \"" + nameValueArg[1] + "\"");
+                actionsByParameters[nameValueArg[0]].Invoke(nameValueArg[1]);
+            }
         }
     }
 
