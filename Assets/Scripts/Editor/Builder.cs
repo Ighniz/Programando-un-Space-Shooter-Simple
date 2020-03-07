@@ -45,7 +45,7 @@ public class Builder : MonoBehaviour
     static public void Build()
     {
         BuildTarget buildTarget = (BuildTarget)Enum.Parse(typeof(BuildTarget), targetPlatform);
-        BuildPipeline.BuildPlayer(new[] {"Assets/Scenes/MenuPrincipal.unity"}, outputDir, buildTarget, BuildOptions.None);
+        BuildPipeline.BuildPlayer(new[] {"Assets/Scenes/MenuPrincipal.unity", "Assets/Scenes/Gameplay.unity"}, outputDir, buildTarget, BuildOptions.None);
     }
 
     static public void SetTargetPlatform(string target)
