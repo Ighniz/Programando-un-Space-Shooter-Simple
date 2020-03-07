@@ -21,7 +21,7 @@ public class Builder : MonoBehaviour
         var args = System.Environment.GetCommandLineArgs();
         foreach (var argument in args)
         {
-            var nameValueArg = argument.Split(new[]{""}, StringSplitOptions.RemoveEmptyEntries);
+            var nameValueArg = argument.Split(new[]{"="}, StringSplitOptions.RemoveEmptyEntries);
             actionsByParameters[nameValueArg[0]].Invoke(nameValueArg[1]);
         }
     }
