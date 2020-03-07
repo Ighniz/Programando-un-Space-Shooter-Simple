@@ -15,6 +15,14 @@ public class Builder : MonoBehaviour
 
     private static string outputDir;
     private static string targetPlatform;
+
+    [MenuItem("Tools/Build")]
+    static public void BuildFromEditor()
+    {
+        SetOutputDir("BUILD/Game.exe");
+        SetTargetPlatform("StandaloneWindows");
+        Build();
+    }
     
     static public void PerformBuild()
     {
@@ -37,7 +45,7 @@ public class Builder : MonoBehaviour
     static public void Build()
     {
         BuildTarget buildTarget = (BuildTarget)Enum.Parse(typeof(BuildTarget), targetPlatform);
-        BuildPipeline.BuildPlayer(new[] {"MenuPrincipal"}, outputDir, buildTarget, BuildOptions.None);
+        BuildPipeline.BuildPlayer(new[] {"Assets/Scenes/MenuPrincipal.unity"}, outputDir, buildTarget, BuildOptions.None);
     }
 
     static public void SetTargetPlatform(string target)
